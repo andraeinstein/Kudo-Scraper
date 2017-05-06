@@ -1,0 +1,11 @@
+D:\Dropbox\Kudo Scraper\Kudo Scraper\bin\Debug\Kudo Scraper.exe.config
+D:\Dropbox\Kudo Scraper\Kudo Scraper\bin\Debug\Kudo Scraper.exe
+D:\Dropbox\Kudo Scraper\Kudo Scraper\bin\Debug\Kudo Scraper.pdb
+D:\Dropbox\Kudo Scraper\Kudo Scraper\bin\Debug\MySql.Data.dll
+D:\Dropbox\Kudo Scraper\Kudo Scraper\bin\Debug\MySql.Data.xml
+D:\Dropbox\Kudo Scraper\Kudo Scraper\obj\Debug\Kudo_Scraper.Form1.resources
+D:\Dropbox\Kudo Scraper\Kudo Scraper\obj\Debug\Kudo_Scraper.Properties.Resources.resources
+D:\Dropbox\Kudo Scraper\Kudo Scraper\obj\Debug\Kudo Scraper.csproj.GenerateResource.Cache
+D:\Dropbox\Kudo Scraper\Kudo Scraper\obj\Debug\Kudo Scraper.exe
+D:\Dropbox\Kudo Scraper\Kudo Scraper\obj\Debug\Kudo Scraper.pdb
+D:\Dropbox\Kudo Scraper\Kudo Scraper\obj\Debug\Kudo Scraper.csprojResolveAssemblyReference.cache
