@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Ini;
 
 namespace Kudo_Scraper
 {
@@ -19,6 +20,7 @@ namespace Kudo_Scraper
         String kode;
         String nomor;
         String lanjut;
+        String count;
         public Form1()
         {
             InitializeComponent();
@@ -27,15 +29,21 @@ namespace Kudo_Scraper
         private void Form1_Load(object sender, EventArgs e)
         {
             richTextBox1.Text += Environment.NewLine + "Step 1 : Kudo Mulai jalan";
-            txtpin.Text = "789789";
             webBrowser1.Navigate("https://kudo.co.id/shop/agent");
+
+            var path = Application.StartupPath + "\\setting.ini";
+            IniFile ini = new IniFile(path);
+            
+            txtpin.Text = ini.IniReadValue("Info", "pin");
+            count = ini.IniReadValue("Info", "count");
+            txtport.Text = ini.IniReadValue("Info", "port");
+            Form1 f1 = new Form1();
+            f1.Text = "Kudo Scraper | COM : " + ini.IniReadValue("Info", "port");
         }
 
         private void MulaiLagi()
         {
-            richTextBox1.Text += Environment.NewLine + "Step 2 : Start Process";
             //MessageBox.Show("a");
-            txtport.Text = "300";
             txthitung.Text = "0";
 
             timer1.Enabled = true;
@@ -87,7 +95,9 @@ namespace Kudo_Scraper
                 btn.InvokeMember("click");
 
                 webBrowser1.DocumentCompleted += PembelianPulsa;
-            }else
+                
+            }
+            else
             {
                 //MessageBox.Show("j");
             }
@@ -137,7 +147,6 @@ namespace Kudo_Scraper
             String web = webBrowser1.Url.ToString();
             if (web.Contains("transaksi-aktif"))
             {
-                richTextBox1.Text += Environment.NewLine + "Step 7 : " + nomor + " Input PIN dan klik Bayar";
                 HtmlElement btn = webBrowser1.Document.GetElementsByTagName("button")[5];
                 btn.InvokeMember("click");
                 webBrowser1.Document.GetElementById("check").Focus();
@@ -145,6 +154,10 @@ namespace Kudo_Scraper
                 HtmlElement btn2 = webBrowser1.Document.GetElementsByTagName("button")[8];
                 btn2.InvokeMember("click");
                 db.SQLQuery("insert into sms_inbox(sourceno,nama,tgl,text,type,port,ip,iscentre) select 'kudo',nama,now(),'" + nomor + " sukses dgn SN=" + DateTime.Now.ToString("ddMMHHmmss") + ".', 13,'200','192.168.2.3',1 from distributor where replyno='kudo'");
+            }
+
+            if(web.Contains("confirm/success"))
+            {
                 MulaiLagi();
             }
 
@@ -157,7 +170,7 @@ namespace Kudo_Scraper
             int hitung = 0;
             hitung++;
             txthitung.Text = (Convert.ToInt32(txthitung.Text) + hitung).ToString();
-            if (txthitung.Text == "12")
+            if (txthitung.Text == count)
             {
                 CekOutbox();
                 txthitung.Text = "0";

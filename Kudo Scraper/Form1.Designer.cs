@@ -63,7 +63,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(12, 37);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(523, 492);
+            this.webBrowser1.Size = new System.Drawing.Size(341, 388);
             this.webBrowser1.TabIndex = 7;
             // 
             // timer1
@@ -91,7 +91,7 @@
             // 
             this.lblstatus.AutoSize = true;
             this.lblstatus.ForeColor = System.Drawing.Color.Red;
-            this.lblstatus.Location = new System.Drawing.Point(415, 11);
+            this.lblstatus.Location = new System.Drawing.Point(359, 11);
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(106, 13);
             this.lblstatus.TabIndex = 12;
@@ -115,16 +115,16 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(541, 37);
+            this.richTextBox1.Location = new System.Drawing.Point(359, 37);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(272, 492);
+            this.richTextBox1.Size = new System.Drawing.Size(187, 388);
             this.richTextBox1.TabIndex = 15;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // btnonoff
             // 
-            this.btnonoff.Location = new System.Drawing.Point(738, 8);
+            this.btnonoff.Location = new System.Drawing.Point(471, 8);
             this.btnonoff.Name = "btnonoff";
             this.btnonoff.Size = new System.Drawing.Size(75, 23);
             this.btnonoff.TabIndex = 16;
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 541);
+            this.ClientSize = new System.Drawing.Size(558, 437);
             this.Controls.Add(this.btnonoff);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label3);
